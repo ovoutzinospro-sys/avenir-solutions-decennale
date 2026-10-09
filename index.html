@@ -84,19 +84,23 @@ footer{background:#0f2f40;color:#dbe8ee;padding:28px 0;font-size:13px}footer a{c
 </div>
 
 <div class="card" id="demande"><span class="badge">Pré-demande gratuite & sans engagement</span><h2>Décrivez votre besoin en moins d’une minute</h2><p>Cette étape est une pré-demande. Après réception, je vous recontacte personnellement pour compléter les informations nécessaires et étudier précisément votre situation avant toute proposition.</p>
-<form id="leadForm">
-<label for="nom">Nom / entreprise *</label><input id="nom" required>
+<form id="leadForm" action="https://formsubmit.co/ovoutzinos.pro@gmail.com" method="POST" accept-charset="UTF-8">
+<input type="hidden" name="_subject" value="Nouvelle demande assurance décennale - Avenir Solutions">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_url" value="https://ovoutzinospro-sys.github.io/avenir-solutions-decennale/">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<label for="nom">Nom / entreprise *</label><input id="nom" name="nom" required>
 <label>Votre métier *</label>
 <div class="metiers">
 <button class="metier" type="button" data-v="Maçonnerie">Maçonnerie</button><button class="metier" type="button" data-v="Électricité">Électricité</button><button class="metier" type="button" data-v="Plomberie / Chauffage">Plomberie / Chauffage</button><button class="metier" type="button" data-v="Couverture / Zinguerie">Couverture / Zinguerie</button><button class="metier" type="button" data-v="Charpente">Charpente</button><button class="metier" type="button" data-v="Carrelage">Carrelage</button><button class="metier" type="button" data-v="Peinture">Peinture</button><button class="metier" type="button" data-v="Plaquiste / Plâtrerie">Plaquiste / Plâtrerie</button><button class="metier" type="button" data-v="Menuiserie">Menuiserie</button><button class="metier" type="button" data-v="Étanchéité">Étanchéité</button><button class="metier" type="button" data-v="Climatisation / Pompe à chaleur">Climatisation / PAC</button><button class="metier" type="button" data-v="Photovoltaïque">Photovoltaïque</button><button class="metier" type="button" data-v="Terrassement">Terrassement</button><button class="metier" type="button" data-v="Travaux publics / VRD">Travaux publics / VRD</button>
 </div>
-<input id="metier" placeholder="Ou indiquez votre métier / activité" required>
-<label for="situation">Votre situation *</label><select id="situation" required><option value="">Choisir</option><option>Création d’entreprise</option><option>Première décennale</option><option>Déjà assuré : comparer mon contrat</option><option>Vérifier mes garanties</option><option>Ajouter une activité</option><option>Besoin de RC Pro</option></select>
-<label for="cp">Code postal *</label><input id="cp" inputmode="numeric" required>
-<label for="tel">Téléphone *</label><input id="tel" type="tel" required>
-<label for="mail">E-mail</label><input id="mail" type="email">
+<input id="metier" name="metier" placeholder="Ou indiquez votre métier / activité" required>
+<label for="situation">Votre situation *</label><select id="situation" name="situation" required><option value="">Choisir</option><option>Création d’entreprise</option><option>Première décennale</option><option>Déjà assuré : comparer mon contrat</option><option>Vérifier mes garanties</option><option>Ajouter une activité</option><option>Besoin de RC Pro</option></select>
+<label for="cp">Code postal *</label><input id="cp" name="cp" inputmode="numeric" required>
+<label for="tel">Téléphone *</label><input id="tel" name="tel" type="tel" required>
+<label for="mail">E-mail</label><input id="mail" name="mail" type="email">
 <button class="btn submit" type="submit">Envoyer ma pré-demande</button>
-<p class="small">Après validation du formulaire, WhatsApp s’ouvre avec un message prérempli. Vérifiez-le et appuyez sur « Envoyer » dans WhatsApp pour transmettre votre demande.</p><p class="small">Cette pré-demande ne vaut ni devis ni engagement. Des informations et justificatifs complémentaires pourront être demandés pour l’étude du dossier.</p>
+<p class="small">En validant ce formulaire, votre demande est transmise par le service sécurisé FormSubmit à l'adresse professionnelle d'Avenir Solutions : ovoutzinos.pro@gmail.com. Vous recevrez une confirmation d'envoi à l'écran.</p><p class="small">Cette pré-demande ne vaut ni devis ni engagement. Des informations et justificatifs complémentaires pourront être demandés pour l’étude du dossier.</p>
 </form>
 </div>
 </section>
@@ -143,15 +147,5 @@ footer{background:#0f2f40;color:#dbe8ee;padding:28px 0;font-size:13px}footer a{c
 <script>
 const mi=document.getElementById('metier');
 document.querySelectorAll('.metier').forEach(b=>b.onclick=()=>{document.querySelectorAll('.metier').forEach(x=>x.classList.remove('on'));b.classList.add('on');mi.value=b.dataset.v});
-document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();const g=id=>document.getElementById(id).value.trim();const msg=`Bonjour Olivier, je souhaite demander le contrôle gratuit de ma situation en assurance professionnelle.
-
-Nom / entreprise : ${g('nom')}
-Métier / activité : ${g('metier')}
-Situation : ${g('situation')}
-Code postal : ${g('cp')}
-Téléphone : ${g('tel')}
-E-mail : ${g('mail')||'Non renseigné'}
-
-Merci de me recontacter.`;window.location.assign('https://wa.me/33621381079?text='+encodeURIComponent(msg))});
 </script>
 </body></html>
