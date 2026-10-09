@@ -100,6 +100,8 @@ footer{background:#0f2f40;color:#dbe8ee;padding:28px 0;font-size:13px}footer a{c
 <label for="tel">Téléphone *</label><input id="tel" name="tel" type="tel" required>
 <label for="mail">E-mail</label><input id="mail" name="mail" type="email">
 <button class="btn submit" type="submit">Envoyer ma pré-demande</button>
+<button class="btn dark" type="button" id="whatsappRequest" style="margin-top:12px;width:100%">Faire ma demande par WhatsApp</button>
+<p class="small">WhatsApp s'ouvrira avec les informations saisies. Vérifiez le message puis appuyez sur « Envoyer ». Le bouton e-mail ci-dessus reste disponible séparément.</p>
 <p class="small">En validant ce formulaire, votre demande est transmise par le service sécurisé FormSubmit à l'adresse professionnelle d'Avenir Solutions : ovoutzinos.pro@gmail.com. Vous recevrez une confirmation d'envoi à l'écran.</p><p class="small">Cette pré-demande ne vaut ni devis ni engagement. Des informations et justificatifs complémentaires pourront être demandés pour l’étude du dossier.</p>
 </form>
 </div>
@@ -147,5 +149,20 @@ footer{background:#0f2f40;color:#dbe8ee;padding:28px 0;font-size:13px}footer a{c
 <script>
 const mi=document.getElementById('metier');
 document.querySelectorAll('.metier').forEach(b=>b.onclick=()=>{document.querySelectorAll('.metier').forEach(x=>x.classList.remove('on'));b.classList.add('on');mi.value=b.dataset.v});
+</script>
+<script>
+document.getElementById('whatsappRequest').addEventListener('click',function(){
+  const form=document.getElementById('leadForm');
+  if(!form.reportValidity())return;
+  const get=id=>document.getElementById(id).value.trim();
+  const msg=`Bonjour Olivier, je souhaite un bilan gratuit pour mon assurance décennale ou RC Pro.
+Nom / entreprise : ${get('nom')}
+Métier : ${get('metier')}
+Situation : ${get('situation')}
+Code postal : ${get('cp')}
+Téléphone : ${get('tel')}
+E-mail : ${get('mail')||'Non renseigné'}`;
+  window.location.href='https://wa.me/33621381079?text='+encodeURIComponent(msg);
+});
 </script>
 </body></html>
