@@ -1,0 +1,11 @@
+/* Avenir Solutions — pages checklist (accueil du lead magnet et remerciement) */
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;margin:14px 0 4px}
+.consent input{width:22px;height:22px;flex:0 0 22px;margin-top:2px}
+.mock{background:linear-gradient(150deg,#ffffff30,#ffffff14);border:1px solid #ffffff66;border-radius:18px;padding:22px;margin:22px 0 4px;max-width:560px}
+.mock .mk-tag{display:inline-block;background:#fff;color:#084f8b;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.mock strong{display:block;font-size:26px;line-height:1.12;margin:12px 0 10px}
+.mock ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.mock li{padding-left:26px;position:relative;font-weight:700}
+.mock li:before{content:"✓";position:absolute;left:0;color:#fff;background:#13845a;border-radius:50%;width:19px;height:19px;font-size:12px;text-align:center;line-height:19px}
+.dl-big{display:inline-block;margin:10px 0 4px;font-size:19px;padding:18px 26px}
+.sign{display:grid;grid-template-columns:1fr;gap:6px}
