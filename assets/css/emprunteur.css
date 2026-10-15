@@ -22,3 +22,6 @@ html{-webkit-text-size-adjust:100%;scroll-padding-top:12px}
 @media print{.sticky,.skip,.sitenav,form{display:none!important}body{background:#fff!important}}
 /* utilitaires issus des anciens attributs style */
 html .u630447{color:white}
+
+/* ===== Logo (2026-10-15) ===== */
+.brand{padding:10px 16px;line-height:0}.brand img{display:block;width:260px;max-width:100%;height:auto}

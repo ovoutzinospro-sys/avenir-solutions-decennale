@@ -22,3 +22,5 @@ html{-webkit-text-size-adjust:100%;scroll-padding-top:12px}
 @media print{.sticky,.skip,.sitenav,form{display:none!important}body{background:#fff!important}}
 /* utilitaires issus des anciens attributs style */
 
+/* ===== Logo (2026-10-15) ===== */
+.logo{display:inline-block;background:#fff;border-radius:14px;padding:10px 16px;margin:0 0 18px;line-height:0}.logo img{display:block;width:230px;max-width:100%;height:auto}
