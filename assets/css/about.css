@@ -1,0 +1,24 @@
+:root{font-family:Arial,Helvetica,sans-serif;color:#153a47;background:#f6fbfa}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#087e9a,#138463);color:white;padding:52px 20px}main,nav,footer{max-width:1060px;margin:auto;padding:22px}h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 14px}h2{color:#087e9a}p{line-height:1.65}.intro{max-width:800px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:white;padding:24px;border:1px solid #d5e7e4;border-radius:14px;box-shadow:0 3px 12px #0b47520d}.card a,.cta{color:#086e85;font-weight:700}.cta{display:inline-block;background:#fff;color:#086b7e;padding:13px 20px;border-radius:8px;text-decoration:none;margin:8px 10px 0 0}.secondary{background:#07566a;color:#ffffff!important;border:2px solid #07566a}.secondary:visited,.secondary:hover,.secondary:focus{color:#ffffff!important}.secondary:hover{background:#064658}nav a{margin-right:20px}footer{font-size:.9rem;color:#4a6470}@media(max-width:600px){header{padding:36px 20px}}
+/* ===== Socle commun (reprise 2026-10-15) ===== */
+html{-webkit-text-size-adjust:100%;scroll-padding-top:12px}
+.skip{position:absolute;left:12px;top:-80px;z-index:1000;background:#fff;color:#084f8b;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;box-shadow:0 4px 14px #0003}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid #084f8b;outline-offset:3px;box-shadow:0 0 0 6px #fff}
+.hp{display:none!important}
+.sitenav{max-width:1040px;margin:24px auto 0;padding:0 20px;text-align:left;font-size:14px}
+.sitenav strong{display:block;margin-bottom:8px}
+.sitenav ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px 24px}
+.sitenav a{display:inline;margin:0;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.sitenav a[aria-current=page]{font-weight:700;text-decoration:none}
+.form-status{margin:12px 0 0;font-weight:700;color:#173042}
+.form-status:empty{display:none}
+.form-status a{color:#084f8b}
+.wa-btn{margin-top:12px;width:100%}
+.metier[aria-pressed=true]{border-color:#118452;background:#e5f6ef}
+.btn-contact{display:inline-block;background:#07566a;color:#fff!important;font-weight:800;font-size:1.1rem;padding:14px 20px;border-radius:8px;text-decoration:none}
+.btn-contact:hover{background:#064658}
+.btn-contact[aria-hidden]{display:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media print{.sticky,.skip,.sitenav,form{display:none!important}body{background:#fff!important}}
+/* utilitaires issus des anciens attributs style */
+html .u062d4a{margin-top:24px}html .u50c687{max-width:1060px;margin:auto}html .u923871{letter-spacing:.09em;font-weight:700}html .ueb9836{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
