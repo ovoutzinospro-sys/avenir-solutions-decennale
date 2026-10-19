@@ -1,0 +1,34 @@
+name: Surveillance du site
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  controle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Controle du sitemap, des pages et de robots.txt
+        run: |
+          BASE="https://ovoutzinospro-sys.github.io/avenir-solutions-decennale"
+          ERR=0
+          CODE=$(curl -s -o sitemap.xml -w '%{http_code}' --retry 3 --retry-delay 10 --max-time 30 "$BASE/sitemap.xml" || true)
+          if [ "$CODE" != "200" ]; then echo "ERREUR sitemap.xml : HTTP $CODE"; exit 1; fi
+          grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's/<loc>//' -e 's#</loc>##' > urls.txt || true
+          N=$(wc -l < urls.txt)
+          echo "Sitemap : $N URL"
+          if [ "$N" -lt 30 ]; then echo "ERREUR : moins de 30 URL dans le sitemap"; ERR=1; fi
+          while read -r U; do
+            C=$(curl -s -L -o page.html -w '%{http_code}' --retry 3 --retry-delay 10 --max-time 30 "$U" || true)
+            if [ "$C" != "200" ]; then echo "ERREUR HTTP $C : $U"; ERR=1; continue; fi
+            if ! grep -qi '<title>' page.html; then echo "ERREUR page sans titre : $U"; ERR=1; fi
+          done < urls.txt
+          R=$(curl -s -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 10 --max-time 30 "$BASE/robots.txt" || true)
+          if [ "$R" != "200" ]; then echo "ERREUR robots.txt : HTTP $R"; ERR=1; fi
+          if [ "$ERR" = "0" ]; then echo "OK : $N pages, sitemap et robots.txt conformes"; fi
+          exit $ERR
